@@ -1,0 +1,123 @@
+<!-- START ABOUT -->
+{% extends "presentacion/base.html" %}
+{% load static %}
+{% block  content%}
+
+<head>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'build/css/css_nueva.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body  style="background-repeat: no-repeat; background-color: rgb(212, 211, 211);">
+
+{% for persona in datos %}
+
+<section id="about" class="gray_bg section_padding">
+<div class="container">
+<div class="single_about">
+<div class="row">
+<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="about_image">
+<img src="{{persona.foto}}">
+
+</div>
+</div>
+
+<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="about_content_area">
+<h4>Hi, I'm  <span>{{persona.nombre}}</span></h4>
+<p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Networking is my passion, I studied Electronic and Networking Engineering in 
+   Escuela Politecnica Nacional, Quito, Ecuador. I had the opportunity to be parte 
+   of the CSAP program and get to know more about my passion</p>
+<div class="about_details">
+<div class="row">
+<div class="col-md-12">
+<div class="ct_about">
+<span> Name </span> : {{persona.nombre}} 
+</div>
+</div>
+
+<div class="col-md-12">
+<div class="ct_about">
+<span> CCO </span>
+: {{persona.CCO}}
+</div>
+</div>
+
+<div class="col-md-12">
+<div class="ct_about">
+<span> Email </span>
+: {{persona.CCO}}@cisco.com
+</div>
+</div>
+
+<div class="col-md-12">
+<div class="ct_about">
+<span> Manager </span>
+: {{persona.manager}}
+</div>
+</div>
+
+<div class="col-md-12">
+<div class="ct_about">
+<span> Location  </span>
+: {{persona.ubicacion}}
+</div>
+</div>
+
+<div class="col-md-12">
+<div class="ct_about">
+<span> Vertical </span>
+: {{persona.vertical}}
+</div>
+</div>
+
+
+<div class="col-md-12">
+<div class="ct_about">
+<span> Languages </span>
+: {{persona.idioma}}
+</div>
+</div>
+
+
+<a href="{% url 'webex' 'n.diaz@pucp.edu.pe' persona.CCO persona.man_email%}" class="btn btn-default main_btn" style="background-color: #6acf5d ; color:#FFFF">Contact</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END ABOUT -->
+
+<!-- START SERVICE -->
+<section id="service" class="gray_bg section_padding pb_70">
+    <div class="container">
+    <div class="col-md-12 col-sm-12-col-xs-12">
+    <div class="section_heading text-center">
+    <h2>My <span>Specialties</span></h2>
+    <div class="sm_border"></div>
+    </div>
+    </div>
+    
+    {% for persona in datos %}
+    <div class="row text-center">
+    <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="single-service">
+    <i class="fa fa-pencil fa-lg"></i>
+    <h4>{{persona.soluciones}}</h4>
+
+
+    
+    </div>
+    </div>
+    {% endfor %}
+    </section>
+    <!-- END SERVICE -->
+    {% endfor %}
+</body>
+{% endblock  %}

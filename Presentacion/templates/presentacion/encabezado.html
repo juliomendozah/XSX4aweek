@@ -1,0 +1,78 @@
+
+{% load static %}
+ <link rel="stylesheet" href="{% static 'build/css/new.css' %}">
+ <link href= "{% static 'build/css/sb-admin-2.min.css' %}"  rel="stylesheet">
+
+<nav  class="navbar navbar-expand-lg navbar-light " style="background-color: #00263A;">
+    <div  class="container-fluid">
+      <a style="font-size: 400%; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="navbar-brand" href="{% url 'Portada' %}"  ><b style='color:#ffff'>XSA</b><b style='color:#6acf5d'>4A</b><b style='color:#ffff'>WEEK</b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav" >
+          <!-- Nav Item - User Information -->
+
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="{% url 'Portada' %}" style='color:#ffff'><b>Home</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'Presentacion' %}"style='color:#ffff'><b>Volunteers</b></a>
+          </li>
+          <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <spanclass="nav-link " aria-current="page" style='color:#ffff'>Verticals</span>
+            </a>
+  
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="{% url 'FSO' %}">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    FSO
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'EN' %}">
+                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Enterprise Networking
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'Meraki' %}">
+                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Meraki
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'Wireless' %}">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Wireless
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'Security' %}">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Security
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'Collab' %}">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Collaboration
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'SP' %}">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Service Provider
+                </a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#" style='color:#ffff'><b>Blog</b></a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <nav  class="navbar" style="background-color: #6acf5d">
+   
+  </nav>

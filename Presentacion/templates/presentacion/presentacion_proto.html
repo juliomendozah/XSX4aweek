@@ -1,0 +1,40 @@
+{% extends "presentacion/base.html" %}
+{% load static %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'build/css/new.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+
+
+<body style="background: #d4d3d3;">
+    
+    <div class="container-fluid">
+        <div class="row">
+            {% for persona in datos %}
+            <div class="col-md-2 col-sm-6">
+                <div class="our-team">
+                    <div class="pic">
+                        <img src="{{persona.foto}}">
+                    </div>
+                    <h3 class="title">{{persona.nombre}}</h3>
+                    <span class="post">{{persona.puesto}}</span>
+                    <ul style="padding-left: 4%;">
+                        <a href="{% url 'Personal' persona.CCO%}" class="btn btn-sm"  style="background-color: #6acf5d ; color:#FFFF"><b>More Info</b></a>
+                        
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+    
+        </div>
+    </div>
+</body>
+
+
+{% endblock content %}
