@@ -8,6 +8,13 @@ import json
 from time import localtime, strftime
 # Create your views here.
 
+def save_image(filename,file):
+    print(filename)
+    destination = open('/Presentacion/static/build/images/'+filename+".jpg", 'wb+')
+    for chunk in file.chunks():
+        destination.write(chunk)
+    destination.close()
+
 def Presentacion(request):
     datos = descripcion.objects.all()
     return render (request,'Presentacion/presentacion_proto.html',{'datos': datos})
@@ -18,6 +25,7 @@ def agregar_voluntario(request):
     
         if form.is_valid():
             form.save()
+            #save_image(request.POST['nombre'],request.FILES['foto'])
             return redirect ('/voluntarios')
     return render(request, 'Presentacion/agregar.html',{"form":form})
 

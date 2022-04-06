@@ -71,7 +71,7 @@ class descripcion(models.Model):
     man_email = models.EmailField()
     ubicacion = models.ForeignKey(area,on_delete=CASCADE)
     vertical= models.ForeignKey(portafolio,on_delete=CASCADE)
-    foto = models.ImageField(upload_to = 'media/Imagenes')
+    foto = models.ImageField(upload_to = 'media/Imagenes')#media/Imagenes
     idioma = MultiSelectField(choices=idiomas)
     requerimientos = models.IntegerField()
     soluciones = MultiSelectField(choices=opciones_tecnologias)

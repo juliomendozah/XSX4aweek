@@ -1,7 +1,8 @@
 from unicodedata import name
 from django.urls import path, re_path
 from Presentacion import views
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
 
@@ -18,4 +19,4 @@ urlpatterns = [
     path('', views.Portada,name = 'Portada'),
     path('webex/<str:user>/<str:CCO>/<str:man_email>/',views.createwebex,name= 'webex')
     
-    ]
+    ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
