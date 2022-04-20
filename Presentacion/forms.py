@@ -6,7 +6,7 @@ class Formulario(forms.ModelForm):
 
     class Meta : 
         model = descripcion
-        fields = ('nombre','puesto','CCO','manager','man_email','ubicacion','vertical','foto','idioma','requerimientos','soluciones')
+        fields = ('nombre','puesto','CCO','manager','man_email','descripcion','ubicacion','vertical','foto','idioma','requerimientos','soluciones')
         
 
 

@@ -30,9 +30,7 @@
 <div class="col-md-6 col-sm-6 col-xs-12">
 <div class="about_content_area">
 <h4>Hi, I'm  <span>{{persona.nombre}}</span></h4>
-<p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Networking is my passion, I studied Electronic and Networking Engineering in 
-   Escuela Politecnica Nacional, Quito, Ecuador. I had the opportunity to be parte 
-   of the CSAP program and get to know more about my passion</p>
+<p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">{{persona.descripcion}}</p>
 <div class="about_details">
 <div class="row">
 <div class="col-md-12">
@@ -85,7 +83,43 @@
 </div>
 
 
-<a href="{% url 'webex' 'n.diaz@pucp.edu.pe' persona.CCO persona.man_email%}" class="btn btn-default main_btn" style="background-color: #6acf5d ; color:#FFFF">Contact</a>
+<!--<a href="{% url 'webex' 'n.diaz@pucp.edu.pe' persona.CCO persona.man_email%}" class="btn btn-default main_btn" style="background-color: #6acf5d ; color:#FFFF">Contact</a>-->
+<!--<a onclick="openForm()" class="btn btn-default main_btn" style="background-color: #6acf5d ; color:#FFFF">Contact</a>-->
+<a onclick="myFunction()" class="btn btn-default main_btn" style="background-color: #6acf5d ; color:#FFFF">Contact</a>
+
+<div class="form-popup" id="myForm">
+    <form action="" class="form-container">
+      <h1>Contact</h1>
+  
+      <label for="email"><b>Please enter your email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+  
+      <button type="submit" class="btn" onclick="closeForm()" href="{% url 'webex' 'n.diaz@pucp.edu.pe' persona.CCO persona.man_email%}">Login </button>
+    </form>
+  </div>
+  
+  <script>
+  function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
+  function myFunction() {
+  let text;
+  let person = prompt("Please enter your email:", "");
+  if (person == null || person == "") {
+    text = "User cancelled the prompt.";
+  } else {
+    text = "Your email is " + person ;
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+  </script>
+  
+
+
 </div>
 </div>
 </div>

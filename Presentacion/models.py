@@ -75,6 +75,7 @@ class descripcion(models.Model):
     idioma = MultiSelectField(choices=idiomas)
     requerimientos = models.IntegerField()
     soluciones = MultiSelectField(choices=opciones_tecnologias)
+    descripcion = models.CharField(max_length=254)
 
 
     
