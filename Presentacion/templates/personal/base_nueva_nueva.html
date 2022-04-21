@@ -20,9 +20,10 @@
 <div class="container">
 <div class="single_about">
 <div class="row">
-<div class="col-md-6 col-sm-6 col-xs-12">
-<div class="about_image">
-<img src="{{persona.foto}}">
+<div class="col-md-4 col-sm-4 col-xs-6">
+  <div class="pic">
+<!--<img src="{{persona.foto}}">-->
+<img src="/media/media/Imagenes/{{persona.CCO}}.jpg">
 
 </div>
 </div>
@@ -83,7 +84,7 @@
 </div>
 
 
-<a href="{% url 'webex' 'n.diaz@pucp.edu.pe' persona.CCO persona.man_email%}" class="btn btn-default main_btn" style="background-color: #6acf5d ; color:#FFFF">Contact</a>
+<!--<a href="{% url 'webex' 'n.diaz@pucp.edu.pe' persona.CCO persona.man_email%}" class="btn btn-default main_btn" style="background-color: #6acf5d ; color:#FFFF">Contact</a>-->
 <!--<a onclick="openForm()" class="btn btn-default main_btn" style="background-color: #6acf5d ; color:#FFFF">Contact</a>-->
 <a onclick="PromptForm()" id="form" class="btn btn-default main_btn" style="background-color: #6acf5d ; color:#FFFF">Contact</a>
 <a id="demo"></a>
@@ -116,26 +117,30 @@
 <!-- END ABOUT -->
 
 <!-- START SERVICE -->
-<section id="service" class="gray_bg section_padding pb_70">
+
+<section id="service" class="gray_bg ">
     <div class="container">
-    <div class="col-md-12 col-sm-12-col-xs-12">
-    <div class="section_heading text-center">
-    <h2>My <span>Specialties</span></h2>
-    <div class="sm_border"></div>
-    </div>
-    </div>
-    
-    {% for persona in datos %}
-    <div class="row text-center">
-    <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="single-service">
-    <i class="fa fa-pencil fa-lg"></i>
-    <h4>{{persona.soluciones}}</h4>
-
-
-    
-    </div>
-    </div>
+      <div class="col-md-12 col-sm-12-col-xs-12">
+        <div class="section_heading text-center">
+          <h2>My <span>Specialties</span></h2>
+          <div class="sm_border"></div>
+        </div>
+      </div>
+      
+      
+      <div class="row text-center">
+        {% for soluciones in persona.soluciones %}
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="single-service">
+            <!--<i class="fa fa-pencil fa-lg"></i>-->
+            <div class="pic">
+              <!--<img src="{{persona.foto}}">-->
+              <img src="/media/media/Soluciones/{{soluciones}}.png">
+              
+              </div>
+            <h4>{{soluciones}}</h4>
+        </div>
+      </div>
     {% endfor %}
     </section>
     <!-- END SERVICE -->
