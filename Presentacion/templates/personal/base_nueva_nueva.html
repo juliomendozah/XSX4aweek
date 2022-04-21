@@ -83,38 +83,25 @@
 </div>
 
 
-<!--<a href="{% url 'webex' 'n.diaz@pucp.edu.pe' persona.CCO persona.man_email%}" class="btn btn-default main_btn" style="background-color: #6acf5d ; color:#FFFF">Contact</a>-->
+<a href="{% url 'webex' 'n.diaz@pucp.edu.pe' persona.CCO persona.man_email%}" class="btn btn-default main_btn" style="background-color: #6acf5d ; color:#FFFF">Contact</a>
 <!--<a onclick="openForm()" class="btn btn-default main_btn" style="background-color: #6acf5d ; color:#FFFF">Contact</a>-->
-<a onclick="myFunction()" class="btn btn-default main_btn" style="background-color: #6acf5d ; color:#FFFF">Contact</a>
+<a onclick="PromptForm()" id="form" class="btn btn-default main_btn" style="background-color: #6acf5d ; color:#FFFF">Contact</a>
+<a id="demo"></a>
 
-<div class="form-popup" id="myForm">
-    <form action="" class="form-container">
-      <h1>Contact</h1>
-  
-      <label for="email"><b>Please enter your email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-  
-      <button type="submit" class="btn" onclick="closeForm()" href="{% url 'webex' 'n.diaz@pucp.edu.pe' persona.CCO persona.man_email%}">Login </button>
-    </form>
-  </div>
   
   <script>
-  function openForm() {
-    document.getElementById("myForm").style.display = "block";
-  }
-  
-  function closeForm() {
-    document.getElementById("myForm").style.display = "none";
-  }
-  function myFunction() {
+
+  function PromptForm() {
   let text;
-  let person = prompt("Please enter your email:", "");
-  if (person == null || person == "") {
+  let email = prompt("Please enter your email:", "");
+  if (email == null || email == "") {
     text = "User cancelled the prompt.";
   } else {
-    text = "Your email is " + person ;
+    text = "Your email is " + email ;
+    document.getElementById('form').setAttribute('href', "/webex/"+email+"/{{persona.CCO}}/{{persona.man_email}}");
   }
-  document.getElementById("demo").innerHTML = text;
+
+  
 }
   </script>
   
